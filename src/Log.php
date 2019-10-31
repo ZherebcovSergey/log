@@ -32,6 +32,10 @@ class Log {
     public static function error($name, $message) {
         self::$instance[$name]->error($message, self::$context);
     }
+    
+    public static function info($name, $message) {
+        self::$instance[$name]->info($message, self::$context);
+    }
 
     public static function setContext(array $context) {
         self::$context = $context;
