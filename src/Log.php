@@ -30,11 +30,15 @@ class Log {
     }
 
     public static function error($name, $message) {
-        self::$instance[$name]->error($message, self::$context);
+        if (!empty(self::$instance[$name])) {
+            self::$instance[$name]->error($message, self::$context);
+        }
     }
     
     public static function info($name, $message) {
-        self::$instance[$name]->info($message, self::$context);
+        if (!empty(self::$instance[$name])) {
+            self::$instance[$name]->info($message, self::$context);
+        }
     }
 
     public static function setContext(array $context) {
